@@ -19,37 +19,63 @@
 
     <title>Bus Ticket</title>
   </head>
-  <body
-    class=""
-  >
+  <body class="">
     <!-- Header -->
     <header
-      class="bg-blue-600 dark:bg-gray-800 text-white p-4 shadow-md transition-colors duration-500"
+      class="bg-gradient-to-r from-pink-500 via-yellow-400 to-green-400 dark:bg-gradient-to-r dark:from-purple-800 dark:via-blue-700 dark:to-indigo-800 text-white p-4 shadow-md transition-colors duration-500"
     >
       <div
-        class="navbar bg-base-100 dark:bg-gray-800 shadow-sm transition-colors duration-500"
+        class="navbar bg-transparent dark:bg-transparent shadow-sm transition-colors duration-500"
       >
-        <div class="navbar-start">
-          <a href="#buy-t" class="btn btn-ghost text-xl">Bus-Ticket</a>
-          <img class="text-9xl font-bold h-12" src="./img/bus-icon.png" alt="">
+        <!-- Navbar Start -->
+        <div class="navbar-start flex items-center gap-4">
+          <a
+            href="#buy-t"
+            class="btn btn-ghost text-2xl hover:text-yellow-300 transition-all duration-300"
+            >Bus-Ticket</a
+          >
+          <img
+            class="h-12 w-12 hover:scale-110 transition-transform duration-300"
+            src="./img/bus-icon.png"
+            alt=""
+          />
         </div>
 
+        <!-- Navbar Center -->
         <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about2">About</a></li>
-            <li><a href="#destination1">Destination</a></li>
+          <ul class="menu menu-horizontal px-1 gap-4 text-lg font-semibold">
+            <li>
+              <a
+                href="#"
+                class="hover:text-pink-300 transition-colors duration-300"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about2"
+                class="hover:text-yellow-300 transition-colors duration-300"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#destination1"
+                class="hover:text-green-300 transition-colors duration-300"
+                >Destination</a
+              >
+            </li>
           </ul>
         </div>
 
+        <!-- Navbar End -->
         <div class="navbar-end">
-          <label class="swap swap-rotate">
-            <!-- this hidden checkbox controls the state -->
+          <label class="swap swap-rotate cursor-pointer">
             <input type="checkbox" class="theme-controller" value="synthwave" />
 
-            <!-- sun icon -->
+            <!-- Sun Icon -->
             <svg
-              class="swap-off h-10 w-10 fill-current"
+              class="swap-off h-10 w-10 fill-current text-yellow-300 hover:text-yellow-400 transition-colors duration-300"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -58,9 +84,9 @@
               />
             </svg>
 
-            <!-- moon icon -->
+            <!-- Moon Icon -->
             <svg
-              class="swap-on h-10 w-10 fill-current"
+              class="swap-on h-10 w-10 fill-current text-indigo-200 hover:text-indigo-400 transition-colors duration-300"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -91,7 +117,9 @@
                 Book your bus tickets easily and quickly. This page supports
                 you.
               </p>
-              <button class="btn btn-primary"><a href="#buy-t">Buy Tickets</a></button>
+              <button class="btn btn-primary">
+                <a href="#buy-t">Buy Tickets</a>
+              </button>
             </div>
           </div>
         </div>
@@ -276,9 +304,7 @@
       </section>
 
       <!-- ticket booking -->
-      <section id="buy-t"
-        class="mt-10 transition-colors duration-300"
-      >
+      <section id="buy-t" class="mt-10 transition-colors duration-300">
         <div
           class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white max-w-6xl mx-auto p-4 md:p-6 rounded-xl shadow-lg bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 grid md:grid-cols-3 gap-6 transition-colors duration-300"
         >
@@ -359,9 +385,9 @@
       </section>
     </main>
 
-
     <!-- FOOTER -->
-    <footer id="about2"
+    <footer
+      id="about2"
       class="mt-10 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white"
     >
       <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8">
