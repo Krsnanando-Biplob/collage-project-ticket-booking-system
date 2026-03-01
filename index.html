@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS + DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        plugins: [daisyui],
+      };
+    </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css"
+      rel="stylesheet"
+    />
+
+    <title>Bus Ticket</title>
+  </head>
+  <body
+    class=""
+  >
+    <!-- Header -->
+    <header
+      class="bg-blue-600 dark:bg-gray-800 text-white p-4 shadow-md transition-colors duration-500"
+    >
+      <div
+        class="navbar bg-base-100 dark:bg-gray-800 shadow-sm transition-colors duration-500"
+      >
+        <div class="navbar-start">
+          <a href="#buy-t" class="btn btn-ghost text-xl">Bus-Ticket</a>
+          <img class="text-9xl font-bold h-12" src="./img/bus-icon.png" alt="">
+        </div>
+
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about2">About</a></li>
+            <li><a href="#destination1">Destination</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar-end">
+          <label class="swap swap-rotate">
+            <!-- this hidden checkbox controls the state -->
+            <input type="checkbox" class="theme-controller" value="synthwave" />
+
+            <!-- sun icon -->
+            <svg
+              class="swap-off h-10 w-10 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+              />
+            </svg>
+
+            <!-- moon icon -->
+            <svg
+              class="swap-on h-10 w-10 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+              />
+            </svg>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container mx-auto p-6 md:p-10 transition-colors duration-500">
+      <!-- Hero Section -->
+      <section
+        class="mt-20 relative h-96 bg-cover bg-center flex items-center justify-center text-white"
+      >
+        <div
+          class="hero bg-base-200 dark:bg-gray-700 min-h-screen rounded-lg transition-colors duration-500"
+          style="background-image: url(./img/banner.png)"
+        >
+          <div class="hero-content text-center">
+            <div class="max-w-md">
+              <h1 class="text-4xl font-bold">Welcome to P-Ticket</h1>
+              <h1 class="text-3xl font-bold">End-to-End Travel with</h1>
+              <p class="py-6 font-bold text-1xl">
+                Book your bus tickets easily and quickly. This page supports
+                you.
+              </p>
+              <button class="btn btn-primary"><a href="#buy-t">Buy Tickets</a></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cards Section -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4">
+        <!-- Route 1 -->
+        <div
+          class="card bg-gradient-to-r from-green-400 to-green-600 text-white shadow-2xl p-6 rounded-2xl hover:scale-105 transition-transform duration-300 dark:from-green-600 dark:to-green-800"
+        >
+          <h3 class="text-xl font-bold mb-2">Dhaka → Mymensingh</h3>
+          <h5 class="text-lg font-semibold">Distance: 120-130 km</h5>
+          <h5 class="text-lg font-semibold">Time: 2-3 hour</h5>
+          <p class="mt-2">Fast and comfortable bus service.</p>
+        </div>
+
+        <!-- Route 2 -->
+        <div
+          class="card bg-gradient-to-r from-purple-400 to-pink-500 text-white shadow-2xl p-6 rounded-2xl hover:scale-105 transition-transform duration-300 dark:from-purple-700 dark:to-pink-700"
+        >
+          <h3 class="text-xl font-bold mb-2">Dhaka → Chottogram</h3>
+          <h5 class="text-lg font-semibold">Distance: 250-270 km</h5>
+          <h5 class="text-lg font-semibold">Time: 5-7 hour</h5>
+          <p class="mt-2">Book online and save time.</p>
+        </div>
+
+        <!-- Route 3 -->
+        <div
+          class="card bg-gradient-to-r from-yellow-400 to-red-500 text-white shadow-2xl p-6 rounded-2xl hover:scale-105 transition-transform duration-300 dark:from-yellow-600 dark:to-red-700"
+        >
+          <h3 class="text-xl font-bold mb-2">Dhaka → Sylhet</h3>
+          <h5 class="text-lg font-semibold">Distance: 240-250 km</h5>
+          <h5 class="text-lg font-semibold">Time: 6-8 hour</h5>
+          <p class="mt-2">Comfortable seating with AC.</p>
+        </div>
+      </section>
+
+      <!-- offer -->
+      <section class="mt-10">
+        <div class="max-w-6xl mx-auto px-4">
+          <!-- Heading -->
+          <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-12">
+            Best offers for you
+          </h2>
+
+          <!-- Offers Container -->
+          <div class="grid gap-6 md:grid-cols-2">
+            <!-- Coupon 1 -->
+            <div
+              class="relative flex flex-col sm:flex-row bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-2xl shadow-lg overflow-hidden"
+            >
+              <!-- Left Side -->
+              <div class="w-full sm:w-2/3 p-6 md:p-8 text-black">
+                <h3 class="text-2xl md:text-3xl font-bold">10% OFF</h3>
+                <p class="mt-2 text-sm">on your next purchase</p>
+                <p class="mt-4 text-xs">use by January 2026</p>
+              </div>
+
+              <!-- Divider (only desktop) -->
+              <div
+                class="hidden sm:block w-px border-r-2 border-white border-dashed"
+              ></div>
+
+              <!-- Right Side -->
+              <div
+                class="w-full sm:w-1/3 flex flex-col items-center justify-center bg-yellow-500 text-black py-6"
+              >
+                <p class="text-lg md:text-xl font-bold">NEW15</p>
+                <p class="text-xs">Coupon Code</p>
+              </div>
+
+              <!-- Cut Circles (desktop only) -->
+              <div
+                class="hidden sm:block absolute top-1/2 -left-4 w-8 h-8 bg-gray-50 rounded-full -translate-y-1/2"
+              ></div>
+              <div
+                class="hidden sm:block absolute top-1/2 -right-4 w-8 h-8 bg-gray-50 rounded-full -translate-y-1/2"
+              ></div>
+            </div>
+
+            <!-- Coupon 2 -->
+            <div
+              class="relative flex flex-col sm:flex-row bg-gradient-to-r from-pink-400 to-pink-500 rounded-2xl shadow-lg overflow-hidden"
+            >
+              <!-- Left Side -->
+              <div class="w-full sm:w-2/3 p-6 md:p-8 text-black">
+                <h3 class="text-2xl md:text-3xl font-bold">20% OFF</h3>
+                <p class="mt-2 text-sm">on your next purchase</p>
+                <p class="mt-4 text-xs">use by January 2026</p>
+              </div>
+
+              <!-- Divider -->
+              <div
+                class="hidden sm:block w-px border-r-2 border-white border-dashed"
+              ></div>
+
+              <!-- Right Side -->
+              <div
+                class="w-full sm:w-1/3 flex flex-col items-center justify-center bg-pink-500 text-black py-6"
+              >
+                <p class="text-lg md:text-xl font-bold">Couple20</p>
+                <p class="text-xs">Coupon Code</p>
+              </div>
+
+              <!-- Cut Circles -->
+              <div
+                class="hidden sm:block absolute top-1/2 -left-4 w-8 h-8 bg-gray-50 rounded-full -translate-y-1/2"
+              ></div>
+              <div
+                class="hidden sm:block absolute top-1/2 -right-4 w-8 h-8 bg-gray-50 rounded-full -translate-y-1/2"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="text-center mt-10 md:mt-12">
+            <button
+              class="px-6 py-3 border-2 border-green-500 text-green-600 font-semibold rounded-lg hover:bg-green-500 hover:text-white transition duration-300"
+            >
+              See All Offers
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- desing par -->
+      <section id="destination1" class="mt-10">
+        <!-- BUS INFO SECTION -->
+        <div
+          class="card bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-2xl p-6 mb-8 rounded-2xl"
+        >
+          <div class="grid md:grid-cols-3 gap-6 items-center">
+            <!-- Bus Image -->
+            <div class="md:col-span-1">
+              <img
+                src="./img/busTop.png"
+                class="rounded-xl shadow-lg hover:scale-105 transition duration-300"
+              />
+            </div>
+
+            <!-- Route Info -->
+            <div class="md:col-span-2 space-y-4">
+              <h2 class="text-3xl font-bold">🚌 Green Line Paribahan</h2>
+
+              <div
+                class="flex flex-col md:flex-row md:justify-between md:items-center gap-4"
+              >
+                <!-- From -->
+                <div class="bg-white/20 backdrop-blur-md p-4 rounded-xl">
+                  <p class="text-sm">From</p>
+                  <h3 class="text-xl font-bold">Dhaka</h3>
+                  <p class="text-sm">06:00 AM</p>
+                </div>
+
+                <!-- Arrow -->
+                <div class="text-center text-3xl font-bold">➜</div>
+
+                <!-- To -->
+                <div class="bg-white/20 backdrop-blur-md p-4 rounded-xl">
+                  <p class="text-sm">To</p>
+                  <h3 class="text-xl font-bold">Mymensingh</h3>
+                  <p class="text-sm">09:30 AM</p>
+                </div>
+              </div>
+
+              <!-- Dedicated Boarding / Dropping -->
+              <div class="grid md:grid-cols-2 gap-4 mt-4">
+                <div class="bg-black/30 p-4 rounded-xl">
+                  <h4 class="font-semibold">📍 Boarding Point</h4>
+                  <p>Gabtoli Bus Terminal</p>
+                </div>
+
+                <div class="bg-black/30 p-4 rounded-xl">
+                  <h4 class="font-semibold">📍 Dropping Point</h4>
+                  <p>Mymensingh Maskanda Terminal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ticket booking -->
+      <section id="buy-t"
+        class="mt-10 transition-colors duration-300"
+      >
+        <div
+          class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white max-w-6xl mx-auto p-4 md:p-6 rounded-xl shadow-lg bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 grid md:grid-cols-3 gap-6 transition-colors duration-300"
+        >
+          <!-- LEFT SIDE -->
+          <div class="md:col-span-2">
+            <h2 class="text-lg md:text-xl font-bold mb-4">Select Your Seat</h2>
+
+            <p class="mb-4">
+              Available Seats:
+              <span
+                id="availableSeats"
+                class="text-green-600 dark:text-green-400 font-bold"
+              >
+                40
+              </span>
+            </p>
+
+            <div
+              id="seatContainer"
+              class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-3"
+            ></div>
+          </div>
+
+          <!-- RIGHT SIDE -->
+          <div>
+            <h2 class="text-lg md:text-xl font-bold mb-4">Booking Summary</h2>
+
+            <div id="selectedSeats" class="mb-4 text-sm"></div>
+
+            <p class="mb-2">
+              Total Price:
+              <span id="totalPrice" class="font-bold">0</span> BDT
+            </p>
+
+            <input
+              id="coupon"
+              type="number"
+              placeholder="Enter 10 or 20"
+              class="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white p-2 mb-3 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+
+            <input
+              id="name"
+              type="text"
+              placeholder="Passenger Name"
+              class="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white p-2 mb-2 rounded"
+            />
+
+            <input
+              id="phone"
+              type="text"
+              placeholder="Phone Number"
+              class="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white p-2 mb-2 rounded"
+            />
+
+            <input
+              id="email"
+              type="email"
+              placeholder="Email"
+              class="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white p-2 mb-4 rounded"
+            />
+
+            <button
+              onclick="handleNext()"
+              class="w-full bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white py-2 rounded transition"
+            >
+              Confirm Booking
+            </button>
+
+            <p
+              id="successMsg"
+              class="hidden mt-4 text-green-600 dark:text-green-400 font-bold text-center"
+            >
+              ✅ Booking Successful!
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer id="about2"
+      class="mt-10 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white"
+    >
+      <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8">
+        <!-- Project Info -->
+        <div>
+          <h2 class="text-2xl font-bold mb-4">🚌 Bus Ticket Booking System</h2>
+          <p class="text-sm opacity-90">
+            A fully responsive online bus ticket booking system built using
+            HTML, Tailwind CSS & JavaScript.
+          </p>
+        </div>
+
+        <!-- Features -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">✨ Project Features</h3>
+          <ul class="space-y-2 text-sm">
+            <li>✔ Seat Selection System</li>
+            <li>✔ Coupon Discount (10% / 20%)</li>
+            <li>✔ Live Price Calculation</li>
+            <li>✔ Dark / Light Mode</li>
+            <li>✔ Booking Confirmation Modal</li>
+          </ul>
+        </div>
+
+        <!-- Technologies -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">💻 Technologies Used</h3>
+          <ul class="space-y-2 text-sm">
+            <li>HTML5</li>
+            <li>Tailwind CSS</li>
+            <li>DaisyUI</li>
+            <li>JavaScript (DOM)</li>
+          </ul>
+        </div>
+
+        <!-- Developer Info -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">👩‍💻 Developer Info</h3>
+          <p class="text-sm">Name: Biplob Chandra Barmon</p>
+          <p class="text-sm">Department: Computer Science</p>
+          <p class="text-sm">Semester: 6th</p>
+          <p class="text-sm mt-2">📧 Email: krishnandobiplob@gmail.com</p>
+        </div>
+      </div>
+
+      <!-- Bottom Line -->
+      <div class="bg-black/30 text-center py-4 text-sm">
+        © 2026 Bus Ticket Booking System | College Academic Project
+      </div>
+    </footer>
+
+    <script>
+      const seatContainer = document.getElementById("seatContainer");
+      const selectedSeatsDiv = document.getElementById("selectedSeats");
+      const totalPriceSpan = document.getElementById("totalPrice");
+      const availableSeatsSpan = document.getElementById("availableSeats");
+
+      let totalSeats = 40;
+      let seatPrice = 550;
+      let selectedSeats = [];
+      let bookedCount = 0;
+
+      /* Generate 40 Seats */
+      for (let i = 1; i <= 40; i++) {
+        let seat = document.createElement("button");
+        seat.innerText = i;
+        seat.dataset.number = i;
+
+        seat.className =
+          "seat bg-black-100 py-2 rounded hover:bg-green-300 transition text-sm";
+
+        seat.onclick = () => selectSeat(seat);
+        seatContainer.appendChild(seat);
+      }
+
+      function selectSeat(seat) {
+        if (seat.classList.contains("booked")) return;
+
+        if (selectedSeats.includes(seat.dataset.number)) return;
+
+        if (selectedSeats.length >= 4) {
+          alert("Maximum 4 seats at a time!");
+          return;
+        }
+
+        seat.classList.remove("bg-gray-200");
+        seat.classList.add("bg-green-500", "text-white");
+
+        selectedSeats.push(seat.dataset.number);
+
+        updateUI();
+      }
+
+      function updateUI() {
+        let subtotal = selectedSeats.length * seatPrice;
+        let couponValue =
+          parseInt(document.getElementById("coupon").value) || 0;
+
+        let discount = 0;
+
+        if (couponValue === 10) {
+          discount = subtotal * 0.1;
+        } else if (couponValue === 20) {
+          discount = subtotal * 0.2;
+        }
+
+        let finalTotal = subtotal - discount;
+
+        selectedSeatsDiv.innerHTML =
+          "<p>Seats: " + selectedSeats.join(", ") + "</p>";
+
+        totalPriceSpan.innerText = finalTotal;
+      }
+
+      document.getElementById("coupon").addEventListener("input", updateUI);
+
+      function handleNext() {
+        let name = document.getElementById("name").value;
+        let phone = document.getElementById("phone").value;
+        let email = document.getElementById("email").value;
+
+        if (!name || !phone || !email || selectedSeats.length === 0) {
+          alert("Fill all fields & select seat!");
+          return;
+        }
+
+        document.getElementById("successMsg").classList.remove("hidden");
+
+        /* Permanently book seats */
+        selectedSeats.forEach((num) => {
+          let btn = document.querySelector(`[data-number='${num}']`);
+          btn.classList.add("booked");
+          btn.disabled = true;
+        });
+
+        bookedCount += selectedSeats.length;
+        totalSeats -= selectedSeats.length;
+
+        availableSeatsSpan.innerText = totalSeats;
+
+        /* Reset current selection only */
+        selectedSeats = [];
+        selectedSeatsDiv.innerHTML = "";
+        totalPriceSpan.innerText = 0;
+        document.getElementById("coupon").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("email").value = "";
+
+        /* If 40 seats booked → reset system */
+        if (bookedCount >= 40) {
+          setTimeout(() => {
+            alert("All 40 seats booked! Resetting system...");
+            location.reload();
+          }, 1200);
+        }
+      }
+    </script>
+  </body>
+</html>
