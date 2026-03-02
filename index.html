@@ -100,7 +100,9 @@
     </header>
 
     <!-- Main -->
-    <main class="container mt-10 mx-auto p-10 lg:p-6 md:p-10 transition-colors duration-500">
+    <main
+      class="container mt-10 mx-auto p-10 lg:p-6 md:p-10 transition-colors duration-500"
+    >
       <!-- Hero Section -->
       <section
         class="mt-20 pt-20 lg:pt-10 relative h-96 bg-cover bg-center flex items-center justify-center text-white"
@@ -324,7 +326,7 @@
 
             <div
               id="seatContainer"
-              class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-3"
+              class="grid grid-cols-4 border-2 p-4 sm:grid-cols-5 md:grid-cols-6 gap-3"
             ></div>
           </div>
 
@@ -457,7 +459,7 @@
         seat.dataset.number = i;
 
         seat.className =
-          "seat bg-black-100 py-2 rounded hover:bg-green-300 transition text-sm";
+          "seat bg-black-100 py-2 border-2 rounded hover:bg-green-300 transition text-sm";
 
         seat.onclick = () => selectSeat(seat);
         seatContainer.appendChild(seat);
